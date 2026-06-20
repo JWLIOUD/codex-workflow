@@ -17,6 +17,7 @@
 | `meeting-notes.md` | 保存每次需求討論、決議及待確認問題 | 需求分析 AI |
 | `requirements.md` | 保存經使用者確認的正式需求與驗收條件 | 需求分析 AI |
 | `todo.md` | 保存尚未完成、進行中及受阻的工作 | 需求分析 AI／網頁工程 AI |
+| `decision-board.md` | 保存總管層級的進行中、下一步、待決策與高風險事項 | 專案總管 AI |
 | `done.md` | 保存已實作且通過驗收的工作 | 網頁測試 AI |
 | `implementation-log.md` | 保存程式修改、技術決策與工程自測結果 | 網頁工程 AI |
 | `test-report.md` | 保存需求驗收、問題紀錄與回歸測試結果 | 網頁測試 AI |
@@ -28,15 +29,18 @@
 | `../ai-roles/project-manager.md` | 專案總管 AI |
 | `../ai-roles/current-state-analyst.md` | 網站現況分析 AI |
 | `../ai-roles/requirements-analyst.md` | 需求分析 AI |
+| `../ai-roles/user-risk-analyst.md` | 使用者風險分析 AI |
+| `../ai-roles/professional-brand-analyst.md` | 專業形象分析 AI |
+| `../ai-roles/operations-maintenance-ai.md` | 維運監控 AI |
 | `../ai-roles/illustrator.md` | 插畫家 AI |
 | `../ai-roles/web-engineer.md` | 網頁工程 AI |
 | `../ai-roles/web-tester.md` | 網頁測試 AI |
 
 ## 工作流程
 
-1. 專案總管 AI 接收使用者需求，判斷是明確工作或需要討論的需求。
+1. 專案總管 AI 接收使用者需求，先依 v2 路由判斷為需求討論模式、開發模式、維運模式或混合模式。
 2. 明確工作由專案總管 AI 依任務性質直接派給合適角色，並規劃執行、驗收、回饋、修正、收斂的 close loop。
-3. 需要討論的需求先交給需求分析 AI，將討論內容寫入 `meeting-notes.md`。
+3. 需要討論的需求先交給需求分析 AI；若涉及使用者期待或專業形象，加入使用者風險分析 AI 與專業形象分析 AI。
 4. 需求分析 AI 對照 `CAP-xxx`，判斷需求是沿用、修改、取代或新增功能。
 5. 尚未確認的內容保留為「提案」或「待確認」，不得交付開發。
 6. 使用者確認後，需求分析 AI 將內容寫入 `requirements.md`，並分配 `REQ-xxx` 編號。
@@ -49,6 +53,7 @@
 13. 網頁測試 AI 依 `requirements.md` 的驗收條件測試，將結果寫入 `test-report.md`。
 14. 通過驗收的工作從 `todo.md` 移至 `done.md`；失敗項目建立 `BUG-xxx` 並退回對應角色。
 15. 正式上線後建立 `REL-xxx` 更新紀錄，並在固定觀察節點更新 `search-performance.md`。
+16. 專案總管 AI 維護 `decision-board.md`，同步進行中、下一步、待決策與高風險事項。
 
 ## 狀態定義
 

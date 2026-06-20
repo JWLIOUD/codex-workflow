@@ -6,6 +6,8 @@
 
 總管 AI 不取代其他專業角色，而是負責判斷目前任務應由哪個角色接手，並確保每次工作都形成可追蹤的 close loop。
 
+v2 起，總管 AI 需先將任務分為四種模式：需求討論模式、開發模式、維運模式、混合模式。路由規則以 `workflows/project-manager-v2-routing.md` 與 `workflows/development-operations-mixed-workflow.md` 為準。
+
 ## 啟動時必讀
 
 每次開始工作前，總管 AI 必須先閱讀：
@@ -16,7 +18,8 @@
 4. `WorkFlow/project/YucheinHomePage/docs/project/todo.md`
 5. `WorkFlow/project/YucheinHomePage/docs/project/requirements.md`
 6. `WorkFlow/project/YucheinHomePage/docs/project/handoff.md`
-7. 視任務需要閱讀 `search-performance.md`、`release-log.md`、`test-report.md`、`implementation-log.md`
+7. `WorkFlow/project/YucheinHomePage/docs/project/decision-board.md`
+8. 視任務需要閱讀 `search-performance.md`、`release-log.md`、`test-report.md`、`implementation-log.md`
 
 若任務涉及網站原始碼，也必須在 `therapist-profile/` 先執行：
 
@@ -39,9 +42,21 @@ git status -sb
 
 ## 任務分類
 
-總管 AI 收到使用者要求後，先分成兩類。
+總管 AI 收到使用者要求後，先分成四種模式。
 
-### A. 明確工作
+### A. 需求討論模式
+
+適用於目標不明、需要使用者決策、涉及文案定位、專業形象、使用者期待、SEO 策略、法律/危機/心理健康邊界的任務。
+
+處理方式：
+
+1. 指派需求分析 AI。
+2. 視風險加入使用者風險分析 AI 與專業形象分析 AI。
+3. 將討論紀錄寫入 `meeting-notes.md`。
+4. 將待確認內容寫入 `decision-board.md`。
+5. 使用者確認後，寫入 `requirements.md` 並拆成 `TASK-xxx`。
+
+### B. 開發模式
 
 符合以下條件時，視為明確工作，可直接派工與執行：
 
@@ -62,23 +77,23 @@ git status -sb
 8. 驗收通過後更新 `implementation-log.md`、`test-report.md`、`done.md`、`release-log.md` 或 `search-performance.md`。
 9. 向使用者回報變更檔案、變更 repo、是否 commit、是否 push、是否需要使用者確認或 Search Console 操作。
 
-### B. 需要討論的需求
-
-符合以下條件時，不得直接交付工程：
-
-- 需求目標仍模糊。
-- 需要選擇內容方向、頁面定位、文案語氣、視覺方向或 SEO 策略。
-- 可能影響使用者專業形象、法律風險、醫療心理健康表述或個案期待。
-- 驗收條件尚無法制定。
+### C. 維運模式
 
 處理方式：
 
-1. 指派需求分析 AI 與使用者討論。
-2. 將討論紀錄寫入 `meeting-notes.md`。
-3. 將待確認內容標示為「提案」或「待確認」。
-4. 使用者確認後，寫入 `requirements.md` 並分配 `REQ-xxx`。
-5. 拆成 `TASK-xxx` 寫入 `todo.md`。
-6. 總管 AI 再依任務性質派給工程、插畫、測試或現況分析角色。
+1. 指派維運監控 AI 或網站現況分析 AI。
+2. 檢查 Search Console、sitemap、robots、HTTP、正式站與週報資料。
+3. 更新 `search-performance.md`、`test-report.md` 或 `decision-board.md`。
+4. 若發現工程缺口，轉混合模式。
+
+### D. 混合模式
+
+處理方式：
+
+1. 先蒐證，不直接改網站。
+2. 判斷是外部延遲、需求不明、工程缺口或驗收不足。
+3. 依結果轉需求討論模式、開發模式或維運模式。
+4. 完成後回到 `decision-board.md` 收斂狀態。
 
 ## 派工規則
 
@@ -86,10 +101,13 @@ git status -sb
 |---|---|---|
 | 網站現況、流量、索引、Search Console | 網站現況分析 AI | `site-inventory.md`、`search-performance.md` |
 | 需求討論、內容策略、文案決策、驗收條件 | 需求分析 AI | `meeting-notes.md`、`requirements.md`、`todo.md` |
+| 使用者期待、誤解、信任與抱怨風險 | 使用者風險分析 AI | `meeting-notes.md`、`decision-board.md` |
+| 專業形象、倫理邊界、心理健康表述 | 專業形象分析 AI | `meeting-notes.md`、`requirements.md` |
+| 例行檢查、Search Console、正式站維運 | 維運監控 AI | `search-performance.md`、`test-report.md` |
 | 圖片目的、構圖、素材狀態 | 插畫家 AI | `illustration-brief.md`、`illustration-assets.md` |
 | HTML、CSS、產製工具、sitemap、robots、部署前工程檢查 | 網頁工程 AI | `implementation-log.md`、網站 repo |
 | 回歸測試、響應式、連結、metadata、Search Console 操作規則驗收 | 網頁測試 AI | `test-report.md`、`done.md` |
-| 跨角色順序、狀態一致性、收斂、回報 | 專案總管 AI | `todo.md`、`handoff.md`、各角色文件 |
+| 跨角色順序、狀態一致性、收斂、回報 | 專案總管 AI | `todo.md`、`handoff.md`、`decision-board.md` |
 
 ## Close Loop 工作模式
 

@@ -5,6 +5,8 @@ Reusable procedures and checklists should live here.
 Suggested workflow documents:
 
 - project-manager close loop
+- project-manager v2 routing
+- development / operations / mixed workflow
 - Search Console indexing follow-up
 - website release checklist
 - pre-push verification checklist

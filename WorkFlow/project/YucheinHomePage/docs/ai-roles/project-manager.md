@@ -101,6 +101,13 @@ git status -sb
 |---|---|---|
 | 網站現況、流量、索引、Search Console | 網站現況分析 AI | `site-inventory.md`、`search-performance.md` |
 | 需求討論、內容策略、文案決策、驗收條件 | 需求分析 AI | `meeting-notes.md`、`requirements.md`、`todo.md` |
+| 網站整體質感、圖文與品牌一致性 | 網站品質總監 AI | `brand-style-guide.md`、`visual-content-system.md` |
+| 網站文案、專欄摘要、講座合作文字 | 內容編輯 AI | `requirements.md`、`meeting-notes.md` |
+| SEO、搜尋意圖、title/meta/internal links | SEO 策略 AI | `requirements.md`、`search-performance.md` |
+| 首屏、卡片、CTA、手機/桌機圖文比例 | 版面體驗 AI | `requirements.md`、`test-report.md` |
+| 圖片需求、裁切規格、主題圖企劃 | 插圖企劃 AI | `illustration-brief.md`、`visual-content-system.md` |
+| 講座合作頁、活動圖文、合作單位資訊 | 講座合作內容 AI | `requirements.md`、`illustration-brief.md` |
+| 品牌一致性與視覺 QA | 品牌一致性 QA AI | `test-report.md`、`brand-style-guide.md` |
 | 使用者期待、誤解、信任與抱怨風險 | 使用者風險分析 AI | `meeting-notes.md`、`decision-board.md` |
 | 專業形象、倫理邊界、心理健康表述 | 專業形象分析 AI | `meeting-notes.md`、`requirements.md` |
 | 例行檢查、Search Console、正式站維運 | 維運監控 AI | `search-performance.md`、`test-report.md` |
@@ -123,6 +130,14 @@ git status -sb
 8. 回報：向使用者說明結果與下一步。
 
 未通過驗收的工作不得移入 `done.md`。
+
+## 網站品質管理規則
+
+- 任何影響主視覺、網站插圖、文章主題圖、講座圖、文案、SEO 或圖文排版的任務，必須評估是否啟動網站品質管理團隊。
+- 圖片裁切與最後呈現不得只由工程 AI 判斷通過。
+- 影響主體、情緒、主題辨識或網站氣質的圖片，必須由品牌一致性 QA AI 驗收。
+- 品牌一致性 QA AI 的 FAIL 必須包含具體修改方向與回派角色。
+- 技術驗收通過但品牌一致性未通過時，不得移入 `done.md`。
 
 ## 回報格式
 

@@ -12,6 +12,8 @@
 | `content-review.md` | 保存疑似錯字、語句與來源問題及使用者決議 | 需求分析 AI |
 | `illustration-brief.md` | 保存已確認的圖片目的、構圖、尺寸與視覺限制 | 需求分析 AI |
 | `illustration-assets.md` | 保存正式圖片路徑、尺寸、替代文字與工程使用方式 | 插畫家 AI |
+| `brand-style-guide.md` | 保存網站長期品牌氣質、色彩、文案、SEO 與品質原則 | 網站品質總監 AI |
+| `visual-content-system.md` | 保存主視覺、系列圖、文章圖、講座圖與裁切規格 | 插圖企劃 AI |
 | `release-log.md` | 保存每次網站正式上線的時間、需求及影響頁面 | 網頁工程 AI／使用者 |
 | `search-performance.md` | 保存 Search Console 基準與更新前後流量影響 | 網站現況分析 AI |
 | `meeting-notes.md` | 保存每次需求討論、決議及待確認問題 | 需求分析 AI |
@@ -27,6 +29,13 @@
 | 文件 | 角色 |
 |---|---|
 | `../ai-roles/project-manager.md` | 專案總管 AI |
+| `../ai-roles/website-quality-director.md` | 網站品質總監 AI |
+| `../ai-roles/content-editor.md` | 內容編輯 AI |
+| `../ai-roles/seo-strategist.md` | SEO 策略 AI |
+| `../ai-roles/layout-experience-ai.md` | 版面體驗 AI |
+| `../ai-roles/illustration-planner.md` | 插圖企劃 AI |
+| `../ai-roles/talks-collaboration-content-ai.md` | 講座合作內容 AI |
+| `../ai-roles/brand-quality-reviewer.md` | 品牌一致性 QA AI |
 | `../ai-roles/current-state-analyst.md` | 網站現況分析 AI |
 | `../ai-roles/requirements-analyst.md` | 需求分析 AI |
 | `../ai-roles/user-risk-analyst.md` | 使用者風險分析 AI |
@@ -41,19 +50,21 @@
 1. 專案總管 AI 接收使用者需求，先依 v2 路由判斷為需求討論模式、開發模式、維運模式或混合模式。
 2. 明確工作由專案總管 AI 依任務性質直接派給合適角色，並規劃執行、驗收、回饋、修正、收斂的 close loop。
 3. 需要討論的需求先交給需求分析 AI；若涉及使用者期待或專業形象，加入使用者風險分析 AI 與專業形象分析 AI。
-4. 需求分析 AI 對照 `CAP-xxx`，判斷需求是沿用、修改、取代或新增功能。
-5. 尚未確認的內容保留為「提案」或「待確認」，不得交付開發。
-6. 使用者確認後，需求分析 AI 將內容寫入 `requirements.md`，並分配 `REQ-xxx` 編號。
-7. 每項正式需求拆成 `TASK-xxx`，加入 `todo.md`。
-8. 網站現況分析 AI 盤點網站，將結果寫入 `site-inventory.md`，並建立或更新 Search Console 流量基準。
-9. 需要新圖片時，需求分析 AI 建立 `ILL-REQ-xxx` 並寫入 `illustration-brief.md`。
-10. 插畫家 AI 產生圖片、放入網站專案，並在 `illustration-assets.md` 記錄 `ILL-ASSET-xxx` 與路徑。
-11. 使用者或需求分析 AI 完成視覺確認後，素材狀態改為「可供工程使用」。
-12. 網頁工程 AI 只實作狀態為「已確認」的需求及「可供工程使用」的圖片，並更新 `todo.md` 與 `implementation-log.md`。
-13. 網頁測試 AI 依 `requirements.md` 的驗收條件測試，將結果寫入 `test-report.md`。
-14. 通過驗收的工作從 `todo.md` 移至 `done.md`；失敗項目建立 `BUG-xxx` 並退回對應角色。
-15. 正式上線後建立 `REL-xxx` 更新紀錄，並在固定觀察節點更新 `search-performance.md`。
-16. 專案總管 AI 維護 `decision-board.md`，同步進行中、下一步、待決策與高風險事項。
+4. 若需求涉及網站質感、圖片、文案、SEO、講座合作或主視覺，啟動網站品質管理團隊。
+5. 需求分析 AI 對照 `CAP-xxx`，判斷需求是沿用、修改、取代或新增功能。
+6. 尚未確認的內容保留為「提案」或「待確認」，不得交付開發。
+7. 使用者確認後，需求分析 AI 將內容寫入 `requirements.md`，並分配 `REQ-xxx` 編號。
+8. 每項正式需求拆成 `TASK-xxx`，加入 `todo.md`。
+9. 網站現況分析 AI 盤點網站，將結果寫入 `site-inventory.md`，並建立或更新 Search Console 流量基準。
+10. 需要新圖片時，插圖企劃 AI 建立 `ILL-REQ-xxx` 並寫入 `illustration-brief.md`。
+11. 插畫家 AI 產生圖片、放入網站專案，並在 `illustration-assets.md` 記錄 `ILL-ASSET-xxx` 與路徑。
+12. 使用者或需求分析 AI 完成視覺確認後，素材狀態改為「可供工程使用」。
+13. 網頁工程 AI 只實作狀態為「已確認」的需求及「可供工程使用」的圖片，並更新 `todo.md` 與 `implementation-log.md`。
+14. 網頁測試 AI 依 `requirements.md` 的驗收條件測試，將結果寫入 `test-report.md`。
+15. 品牌一致性 QA AI 驗收圖文、SEO、排版、裁切與整體品牌氣質；未通過時回派對應角色。
+16. 通過驗收的工作從 `todo.md` 移至 `done.md`；失敗項目建立 `BUG-xxx` 並退回對應角色。
+17. 正式上線後建立 `REL-xxx` 更新紀錄，並在固定觀察節點更新 `search-performance.md`。
+18. 專案總管 AI 維護 `decision-board.md`，同步進行中、下一步、待決策與高風險事項。
 
 ## 狀態定義
 

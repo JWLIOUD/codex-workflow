@@ -1,0 +1,57 @@
+# macOS / local OS files
+.DS_Store
+Thumbs.db
+
+# Local editor and machine state
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets and credentials
+.env
+.env.*
+*.env
+*secret*
+*secrets*
+*token*
+*tokens*
+*credential*
+*credentials*
+auth.json
+cookies.json
+cookies/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Codex / local agent state
+.codex/
+.agents/
+
+# Dependency and build output
+node_modules/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+out/
+coverage/
+cache/
+.cache/
+*.log
+
+# Existing independent website repo.
+# Keep it synced through its own GitHub repository, not this workflow repo.
+therapist-profile/
+
+# Local session/output folders
+2026-06-20/
+
+# Source article drafts kept local unless explicitly published.
+專欄文章/

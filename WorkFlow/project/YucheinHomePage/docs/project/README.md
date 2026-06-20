@@ -1,6 +1,6 @@
 # 專案協作中心
 
-此資料夾是網站現況分析 AI、需求分析 AI、插畫家 AI、網頁工程 AI、
+此資料夾是專案總管 AI、網站現況分析 AI、需求分析 AI、插畫家 AI、網頁工程 AI、
 網頁測試 AI 與使用者共同使用的唯一交接來源。
 
 ## 文件索引
@@ -25,6 +25,7 @@
 
 | 文件 | 角色 |
 |---|---|
+| `../ai-roles/project-manager.md` | 專案總管 AI |
 | `../ai-roles/current-state-analyst.md` | 網站現況分析 AI |
 | `../ai-roles/requirements-analyst.md` | 需求分析 AI |
 | `../ai-roles/illustrator.md` | 插畫家 AI |
@@ -33,19 +34,21 @@
 
 ## 工作流程
 
-1. 網站現況分析 AI 盤點網站，將結果寫入 `site-inventory.md`，並建立 Search Console 流量基準。
-2. 需求分析 AI 先閱讀現況報告，將討論內容寫入 `meeting-notes.md`。
-3. 需求分析 AI 對照 `CAP-xxx`，判斷需求是沿用、修改、取代或新增功能。
-4. 尚未確認的內容保留為「提案」或「待確認」，不得交付開發。
-5. 使用者確認後，需求分析 AI 將內容寫入 `requirements.md`，並分配 `REQ-xxx` 編號。
-6. 每項正式需求拆成 `TASK-xxx`，加入 `todo.md`。
-7. 需要新圖片時，需求分析 AI 建立 `ILL-REQ-xxx` 並寫入 `illustration-brief.md`。
-8. 插畫家 AI 產生圖片、放入網站專案，並在 `illustration-assets.md` 記錄 `ILL-ASSET-xxx` 與路徑。
-9. 使用者或需求分析 AI 完成視覺確認後，素材狀態改為「可供工程使用」。
-10. 網頁工程 AI 只實作狀態為「已確認」的需求及「可供工程使用」的圖片，並更新 `todo.md` 與 `implementation-log.md`。
-11. 網頁測試 AI 依 `requirements.md` 的驗收條件測試，將結果寫入 `test-report.md`。
-12. 通過驗收的工作從 `todo.md` 移至 `done.md`；失敗項目建立 `BUG-xxx` 並退回對應角色。
-13. 正式上線後建立 `REL-xxx` 更新紀錄，並在固定觀察節點更新 `search-performance.md`。
+1. 專案總管 AI 接收使用者需求，判斷是明確工作或需要討論的需求。
+2. 明確工作由專案總管 AI 依任務性質直接派給合適角色，並規劃執行、驗收、回饋、修正、收斂的 close loop。
+3. 需要討論的需求先交給需求分析 AI，將討論內容寫入 `meeting-notes.md`。
+4. 需求分析 AI 對照 `CAP-xxx`，判斷需求是沿用、修改、取代或新增功能。
+5. 尚未確認的內容保留為「提案」或「待確認」，不得交付開發。
+6. 使用者確認後，需求分析 AI 將內容寫入 `requirements.md`，並分配 `REQ-xxx` 編號。
+7. 每項正式需求拆成 `TASK-xxx`，加入 `todo.md`。
+8. 網站現況分析 AI 盤點網站，將結果寫入 `site-inventory.md`，並建立或更新 Search Console 流量基準。
+9. 需要新圖片時，需求分析 AI 建立 `ILL-REQ-xxx` 並寫入 `illustration-brief.md`。
+10. 插畫家 AI 產生圖片、放入網站專案，並在 `illustration-assets.md` 記錄 `ILL-ASSET-xxx` 與路徑。
+11. 使用者或需求分析 AI 完成視覺確認後，素材狀態改為「可供工程使用」。
+12. 網頁工程 AI 只實作狀態為「已確認」的需求及「可供工程使用」的圖片，並更新 `todo.md` 與 `implementation-log.md`。
+13. 網頁測試 AI 依 `requirements.md` 的驗收條件測試，將結果寫入 `test-report.md`。
+14. 通過驗收的工作從 `todo.md` 移至 `done.md`；失敗項目建立 `BUG-xxx` 並退回對應角色。
+15. 正式上線後建立 `REL-xxx` 更新紀錄，並在固定觀察節點更新 `search-performance.md`。
 
 ## 狀態定義
 

@@ -4,6 +4,7 @@ Reusable Codex prompts should live here.
 
 Recommended categories:
 
+- project-manager prompts
 - current-state analysis prompts
 - requirements-analysis prompts
 - web-engineering prompts

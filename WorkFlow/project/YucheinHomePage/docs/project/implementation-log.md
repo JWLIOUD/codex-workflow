@@ -22,6 +22,31 @@
 
 ## 實作紀錄
 
+### DEV-20260621-01：BUG-005 手機系列卡片圖片比例修正
+
+- 日期：2026-06-21
+- 對應問題：BUG-005
+- 對應需求：REQ-003、REQ-004、REQ-007
+- 實作狀態：驗收通過
+- 修改檔案：`articles.css`
+- 實作內容：
+  - 將 `articles.html#series` 系列卡片圖片比例控制移到外層 `.series-card-art` 容器。
+  - 桌機容器維持 `aspect-ratio: 16 / 9`。
+  - 手機 `max-width: 639px` 改由 `.series-card-art` 強制 `aspect-ratio: 1 / 1`。
+  - 圖片本身改為 `display: block` 與 `height: 100%`，避免 `<img width="1600" height="900">` 屬性在手機版覆蓋 900x900 圖片比例。
+- 技術決策：
+  - 不修改插畫素材、不修改 `series.css`，因五個系列頁手機首屏原本已維持 1:1。
+  - `articles.html` 已使用 `articles.css?v=20260613-3`，本次不再提高版本號。
+- 工程自測：
+  - `git diff --check` 通過。
+  - 靜態檢查：`articles.html#series` 有 5 個系列卡片與 5 個 `*-mobile-900x900.webp` source。
+  - Chrome headless 手機檢查：五張系列卡片 rendered size 皆為 1:1，無水平溢出。
+  - Chrome headless 手機逐張滾動檢查：五張系列卡片 `currentSrc` 皆為 `*-mobile-900x900.webp`，natural size 皆為 `900 × 900`。
+  - Chrome headless 桌機檢查：系列卡片 rendered ratio 約 1.78，維持 16:9，無水平溢出。
+  - Chrome headless 手機檢查五個系列頁：`workplace`、`addiction`、`boundary`、`self-care`、`insights` 首屏圖皆為 1:1，無水平溢出。
+- Git 分支：`main`
+- Commit：`e400cb1 Fix mobile series card image ratio`
+
 ### DEV-20260613-01：心理專欄文章系統
 
 - 日期：2026-06-13

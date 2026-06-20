@@ -31,6 +31,31 @@
 
 ## 更新紀錄
 
+### REL-20260621-01：手機系列卡片圖片比例修正
+
+- 上線日期與時間：2026-06-21，已 push 至 GitHub Pages 來源 repo 並確認正式站生效
+- Git 分支：`main`
+- Commit：`e400cb1 Fix mobile series card image ratio`
+- 對應需求：REQ-003、REQ-004、REQ-007
+- 對應待辦：BUG-005
+- 變更類型：版面／響應式修正
+- 影響頁面：
+  - `https://yuchienpsy.com/articles.html#series`
+- 影響查詢主題：無直接 SEO 目標；屬手機閱讀體驗與視覺品質修正
+- 修改前目的：
+  - `articles.html#series` 手機版系列卡片載入 900 × 900 圖，但 rendered size 呈現約 16:9，導致圖片過扁。
+- 實際修改內容：
+  - 將系列卡片圖片比例控制移到 `.series-card-art` 容器。
+  - 手機版容器強制 1:1，桌機版維持 16:9。
+  - 圖片以 `height: 100%` 填滿容器，避免桌機 `width`/`height` 屬性影響手機圖比例。
+- 預期流量影響：
+  - 不預期直接影響搜尋流量；預期改善手機專欄首頁系列入口的視覺品質與可讀性。
+- 是否可能影響索引：否
+- 是否已確認正式網站上線：是，已檢查 `https://yuchienpsy.com/articles.html#series`
+- 備註：
+  - 本地 Chrome headless 已驗證手機五張系列卡片皆為 1:1、currentSrc 皆使用 mobile 900x900 WebP；桌機維持 16:9；五個系列頁手機首屏仍為 1:1。
+  - 正式站 Chrome headless 已驗證 `https://yuchienpsy.com/articles.html#series` 五張系列卡片皆為 1:1、currentSrc 皆使用 mobile 900x900 WebP，無水平溢出。
+
 ### REL-20260614-02：文章來源連結與網站名稱 SEO 補強
 
 - 上線日期與時間：2026-06-14 13:44 +08:00

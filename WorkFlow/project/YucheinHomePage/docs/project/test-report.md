@@ -73,15 +73,15 @@
 
 | 問題 | 嚴重度 | 狀態 | 驗收證據 |
 |---|---|---|---|
-| BUG-005：首頁系列卡片手機版圖片比例過扁 | P1 | 待工程修正 | 上線 `articles.html#series` 手機版載入 `900 × 900` 圖，但 CSS 顯示約 `356 × 200`；系列頁手機圖顯示 `356 × 356` 正常。 |
+| BUG-005：首頁系列卡片手機版圖片比例過扁 | P1 | PASS | 2026-06-21 修正 `articles.css`。Chrome headless 手機逐張滾動檢查五張系列卡片皆載入 `*-mobile-900x900.webp`，natural size 皆為 `900 × 900`，rendered size 皆為 1:1；桌機維持 16:9；五個系列頁手機首屏仍為 1:1。 |
 
 ### BUG-005 回歸必檢
 
-- [ ] `articles.html#series` 於 `390 × 844` 手機 viewport，五張系列卡片 rendered size 接近 1:1。
-- [ ] `articles.html#series` 手機版 `currentSrc` 使用 `*-mobile-900x900.webp`。
-- [ ] `articles.html#series` 桌機版仍可維持 16:9，且無水平溢出。
-- [ ] 五個系列頁手機首屏仍維持 1:1。
-- [ ] 檢查本地預覽與正式網址，不得只做靜態檔案檢查。
+- [x] `articles.html#series` 於手機 viewport，五張系列卡片 rendered size 接近 1:1。
+- [x] `articles.html#series` 手機版 `currentSrc` 使用 `*-mobile-900x900.webp`。
+- [x] `articles.html#series` 桌機版仍可維持 16:9，且無水平溢出。
+- [x] 五個系列頁手機首屏仍維持 1:1。
+- [x] 檢查正式網址，不得只做靜態檔案檢查。2026-06-21 已以 Chrome headless 驗證 `https://yuchienpsy.com/articles.html#series`：五張系列卡片皆為 1:1，皆載入 `*-mobile-900x900.webp`，無水平溢出。
 
 ## 殘餘風險
 

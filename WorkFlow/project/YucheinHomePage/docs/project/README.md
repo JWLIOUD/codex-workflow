@@ -24,6 +24,7 @@
 | `implementation-log.md` | 保存程式修改、技術決策與工程自測結果 | 網頁工程 AI |
 | `test-report.md` | 保存需求驗收、問題紀錄與回歸測試結果 | 網頁測試 AI |
 | `quality-audit-2026-06-21.md` | 保存網站品質管理團隊補驗收結果、限制與後續品質任務 | 網站品質總監 AI |
+| `visual-hierarchy-fix-2026-06-21.md` | 保存 2026-06-21 文章與系列頁主視覺層級修正的派工、執行與驗收 close loop | 專案總管 AI／品牌一致性 QA AI |
 
 ## AI 角色文件
 

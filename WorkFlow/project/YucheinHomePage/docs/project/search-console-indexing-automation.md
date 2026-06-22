@@ -6,9 +6,10 @@ Automation request: daily URL Inspection and indexing follow-up for `yuchienpsy.
 
 Implementation status:
 
-- Codex `automation_update` tool was not available in the current session, so the actual Codex scheduled task could not be created from this turn.
-- This file defines the automation contract that must be used when Codex Automations are available again.
-- Until the scheduled task is confirmed in the Codex app, this is a manual/runbook-backed automation specification, not proof that the daily job is already firing.
+- Created in Codex Automations by the user on 2026-06-22.
+- Automation ID: `yuchien-search-console-indexing-follow-up`
+- Schedule shown in Codex: daily at 09:30.
+- This file remains the operating contract for the scheduled task.
 
 ## Goal
 
@@ -135,7 +136,7 @@ Append each run to `search-performance.md` using this shape:
 
 ## Immediate next action
 
-When Codex Automations tooling is available, create a daily scheduled automation using the prompt below.
+The Codex automation should continue to use the prompt below as its operating instruction.
 
 ```text
 Every day at 09:30 Asia/Taipei, continue Search Console indexing follow-up for yuchienpsy.com.

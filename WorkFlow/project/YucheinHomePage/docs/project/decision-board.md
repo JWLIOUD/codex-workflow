@@ -13,7 +13,7 @@
 ## 進行中
 
 - Search Console 索引與流量觀察仍需依 `search-performance.md` 追蹤。
-- 2026-06-22：每日 Search Console URL Inspection 自動化規格與 URL 佇列已建立；實際 Codex 排程尚未建立，因本次環境未提供 `automation_update` 工具。
+- 2026-06-22：每日 Search Console URL Inspection 自動化規格與 URL 佇列已建立；使用者已在 Codex Automations 建立每日 09:30 排程，ID：`yuchien-search-console-indexing-follow-up`。
 
 ## 已完成
 
@@ -24,7 +24,7 @@
 ## 下一步
 
 - Search Console 配額恢復後，依 `search-console-indexing-automation.md` 與 `search-console-indexing-queue.md` 每日接續索引追蹤。
-- Codex Automations 工具可用後，建立每日 09:30（Asia/Taipei）排程。
+- 下一次每日自動化執行後，確認是否成功更新 `search-console-indexing-queue.md` 與 `search-performance.md`。
 - 檢查 `todo.md` 與 `test-report.md` 中待驗收/已完成狀態是否需要一致化整理。
 
 ## 需要使用者決策

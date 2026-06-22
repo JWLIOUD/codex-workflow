@@ -399,7 +399,9 @@
 
 - 執行者：專案總管 AI
 - 目標：建立每日 URL Inspection / Request indexing 工作規格，讓所有應索引頁面逐步可透過 Google 找到。
-- 實際排程狀態：尚未建立。原因是本次 Codex 環境未提供 `automation_update` 工具，無法直接建立內建排程。
+- 實際排程狀態：已由使用者在 Codex Automations 建立。
+- Automation ID：`yuchien-search-console-indexing-follow-up`
+- 排程：每日 09:30（Asia/Taipei）
 - 已建立工作文件：
   - `search-console-indexing-automation.md`
   - `search-console-indexing-queue.md`
@@ -409,7 +411,7 @@
   - 遇到 Search Console 配額限制時立即停止當日任務並紀錄。
   - 下一次優先處理 `https://yuchienpsy.com/articles/self-care-07.html`，因 2026-06-20 已確認該頁因配額限制未成功送出。
 - 需要後續操作：
-  - Codex Automations 工具可用後，依 `search-console-indexing-automation.md` 建立每日 09:30（Asia/Taipei）排程。
+  - 下一次自動化執行後，檢查是否有把結果寫回 `search-console-indexing-queue.md` 與 `search-performance.md`。
   - 若使用者希望 `talks.html` 穩定出現在 Google，需先由網站 repo 移除 `noindex` 並加入 sitemap，再進行 URL Inspection。
 
 ### WEEKLY-YYYYMMDD-01：每週網站現狀與自然搜尋分析

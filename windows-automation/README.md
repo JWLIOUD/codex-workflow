@@ -48,3 +48,8 @@ Search Console indexing follow-up:
 - request indexing only for eligible URLs
 - update `search-performance.md`
 - stop if quota is exceeded
+
+Project-specific automation spec:
+
+- `WorkFlow/project/YucheinHomePage/docs/project/search-console-indexing-automation.md`
+- `WorkFlow/project/YucheinHomePage/docs/project/search-console-indexing-queue.md`

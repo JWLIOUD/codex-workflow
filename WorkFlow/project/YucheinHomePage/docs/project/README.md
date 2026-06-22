@@ -16,6 +16,8 @@
 | `visual-content-system.md` | 保存主視覺、系列圖、文章圖、講座圖與裁切規格 | 插圖企劃 AI |
 | `release-log.md` | 保存每次網站正式上線的時間、需求及影響頁面 | 網頁工程 AI／使用者 |
 | `search-performance.md` | 保存 Search Console 基準與更新前後流量影響 | 網站現況分析 AI |
+| `search-console-indexing-automation.md` | 保存每日 URL Inspection 與 Request indexing 自動化規格 | 專案總管 AI／網站現況分析 AI |
+| `search-console-indexing-queue.md` | 保存 Search Console 索引追蹤 URL 佇列與每日處理狀態 | 網站現況分析 AI |
 | `meeting-notes.md` | 保存每次需求討論、決議及待確認問題 | 需求分析 AI |
 | `requirements.md` | 保存經使用者確認的正式需求與驗收條件 | 需求分析 AI |
 | `todo.md` | 保存尚未完成、進行中及受阻的工作 | 需求分析 AI／網頁工程 AI |

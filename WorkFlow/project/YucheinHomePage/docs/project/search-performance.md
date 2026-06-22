@@ -504,3 +504,38 @@
 - Queue update: Kept `quota-blocked`; appended blocked-run note for 2026-06-22 22:28.
 - Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
 - Notes: Stop condition reached before Search Console access. Retry this URL only when Search Console is available in the permitted Chrome session.
+
+### Search Console daily indexing automation: 2026-06-22 22:32
+
+- Executor: Search Console automation AI
+- Property: `sc-domain:yuchienpsy.com`
+- Sitemap status: Not checked; browser security policy blocked reading/interacting with the already-open Search Console tab before sitemap confirmation.
+- URL inspected: `https://yuchienpsy.com/articles/self-care-07.html`
+- URL Inspection result: Not completed; an already-open Search Console tab for `sc-domain:yuchienpsy.com` was claimable, but browser security policy rejected interaction with `https://search.google.com`.
+- Live test result: Not run.
+- Action: Skipped; no Request indexing action was attempted.
+- Quota result: No quota consumed.
+- Queue update: Kept `quota-blocked`; appended blocked-run note for 2026-06-22 22:32.
+- Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
+- Notes: `git status -sb` could not complete because Git rejected the parent repository as dubious ownership for the sandbox user. Search Console must be available in a permitted Chrome session before the next retry.
+
+### Search Console daily indexing automation: 2026-06-22 22:34
+
+- Executor: Search Console automation AI
+- Property: `sc-domain:yuchienpsy.com`
+- Sitemap status: Not checked; browser security policy blocked reading/interacting with the already-open Search Console tab before sitemap confirmation.
+- URL inspected: `https://yuchienpsy.com/articles/self-care-07.html`
+- URL Inspection result: Not completed; an already-open Search Console tab for `sc-domain:yuchienpsy.com` was claimable, but browser security policy rejected interaction with `https://search.google.com`.
+- Live test result: Not run.
+- Action: Skipped; no Request indexing action was attempted.
+- Quota result: No quota consumed.
+- Queue update: Kept `quota-blocked`; appended blocked-run note for 2026-06-22 22:34.
+- Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
+- Notes: Browser access was available only up to open-tab listing and tab claiming. The Search Console page itself could not be read or controlled, so no URL Inspection, live test, sitemap confirmation, or indexing request was performed.
+
+#### Automation blocker conclusion
+
+- 2026-06-22 22:32 and 22:34 produced the same blocked result.
+- The issue is no longer Chrome extension discovery. Chrome extension control can see and claim the Search Console tab.
+- The remaining blocker is browser policy preventing read/control of `https://search.google.com`.
+- Recommendation: pause the daily Codex automation until Search Console browser interaction is available, or switch to manual-assisted mode where the user performs Search Console UI steps and Codex records the outcome.

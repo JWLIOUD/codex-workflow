@@ -160,6 +160,23 @@ Append each run to `search-performance.md` using this shape:
 - Search Console does not provide a public API for triggering Request indexing for ordinary web pages, so this workflow depends on the logged-in browser UI.
 - Public Google `site:` checks are useful evidence, but they do not replace Search Console URL Inspection.
 - `talks.html` is currently treated as a special case. Prior notes say it had `noindex`; if the user wants the talks page intentionally searchable, the website repo must first remove `noindex` and add it back to sitemap before any indexing request.
+- Current blocker as of 2026-06-22 22:34: Chrome extension control can list and claim the already-open Search Console tab, but browser policy blocks reading or interacting with `https://search.google.com`. Until that is resolved, the daily automation cannot perform URL Inspection or Request indexing.
+
+## Blocked-mode rule
+
+If two consecutive runs on the same day report that Search Console is claimable but cannot be read or interacted with, do not keep retrying the same browser path.
+
+Required action:
+
+1. Record the second blocked run.
+2. Leave the URL queue unchanged except for the blocked-run note.
+3. Ask the user to pause the daily automation in Codex Automations until Search Console browser interaction is available.
+4. Use manual-assisted mode instead:
+   - user opens Search Console URL Inspection,
+   - user performs the visible Search Console action,
+   - Codex records the outcome into `search-console-indexing-queue.md` and `search-performance.md`.
+
+Do not continue daily automated retries while the Search Console page itself cannot be read or controlled.
 
 ## Immediate next action
 

@@ -72,16 +72,19 @@ Search Console URL Inspection depends on the logged-in browser UI. The daily tas
 Use this fixed browser policy:
 
 1. Use the logged-in Chrome extension/browser session as the only valid browser path for Search Console.
-2. If Chrome extension control is unavailable, stop the run immediately.
-3. Do not fall back to the in-app browser for `https://search.google.com/`; the 2026-06-22 immediate run showed that Search Console is blocked there by browser security policy.
-4. Do not retry browser setup with renamed variables, reset loops, or alternate browser surfaces after the known blocked condition appears.
-5. When browser access is unavailable, do not inspect the URL, do not request indexing, do not change the queue status except adding a blocked-run note, and append one blocked run entry to `search-performance.md`.
-6. A blocked browser run does not consume Search Console quota.
+2. First list open Chrome tabs and claim an existing Search Console tab whose URL starts with `https://search.google.com/search-console`.
+3. Do not open a new `https://search.google.com` tab and do not navigate an existing tab to Search Console. The 2026-06-22 immediate run showed that direct navigation to Search Console can be blocked by browser security policy, while claiming an already-open Search Console tab works.
+4. If no Search Console tab is already open, stop the run immediately and record a blocked-run log that asks the user to keep Search Console open before the next run.
+5. If Chrome extension control is unavailable, stop the run immediately.
+6. Do not fall back to the in-app browser for `https://search.google.com/`; the 2026-06-22 immediate run showed that Search Console is blocked there by browser security policy.
+7. Do not retry browser setup with renamed variables, reset loops, or alternate browser surfaces after the known blocked condition appears.
+8. When browser access is unavailable, do not inspect the URL, do not request indexing, do not change the queue status except adding a blocked-run note, and append one blocked run entry to `search-performance.md`.
+9. A blocked browser run does not consume Search Console quota.
 
 Blocked browser log wording:
 
 ```text
-URL Inspection result: Not completed; Chrome extension/Search Console browser access was unavailable.
+URL Inspection result: Not completed; no claimable already-open Search Console tab was available, or Chrome extension/Search Console browser access was unavailable.
 Action: Skipped; no Request indexing action was attempted.
 Quota result: No quota consumed.
 Queue update: status unchanged; blocked-run note appended.
@@ -176,13 +179,14 @@ Run one Search Console URL Inspection batch:
 1. Run git status -sb.
 2. Read the queue and select only the first URL marked pending-inspection or quota-blocked.
 3. Use only the logged-in Chrome extension/browser session for Search Console.
-4. If Chrome extension control or Search Console access is unavailable, stop immediately. Do not fall back to the in-app browser for search.google.com. Record one blocked-run log and leave the queue status unchanged except for a note.
-5. Confirm Search Console login and property.
-6. Do not request indexing if the URL is already indexed, already requested, not indexable, noindex, google-visible, or canonicalized elsewhere.
-7. Request indexing only when the URL is not indexed, not already requested, live test says Google can index it, and Search Console allows the request.
-8. Stop immediately after one successful Request indexing action.
-9. Stop immediately if Search Console shows quota exceeded.
-10. Update search-console-indexing-queue.md and search-performance.md with the exact result.
-11. Do not modify website source files.
-12. Do not commit unless explicitly asked in that run.
+4. List open Chrome tabs and claim an existing tab whose URL starts with https://search.google.com/search-console. Do not navigate to search.google.com yourself.
+5. If Chrome extension control is unavailable, or no already-open Search Console tab can be claimed, stop immediately. Do not fall back to the in-app browser for search.google.com. Record one blocked-run log and leave the queue status unchanged except for a note.
+6. Confirm Search Console login and property.
+7. Do not request indexing if the URL is already indexed, already requested, not indexable, noindex, google-visible, or canonicalized elsewhere.
+8. Request indexing only when the URL is not indexed, not already requested, live test says Google can index it, and Search Console allows the request.
+9. Stop immediately after one successful Request indexing action.
+10. Stop immediately if Search Console shows quota exceeded.
+11. Update search-console-indexing-queue.md and search-performance.md with the exact result.
+12. Do not modify website source files.
+13. Do not commit unless explicitly asked in that run.
 ```

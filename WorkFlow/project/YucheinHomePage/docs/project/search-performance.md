@@ -490,3 +490,17 @@
 - Queue update: Kept `quota-blocked`; updated Last checked to 2026-06-22 with blocked-run note.
 - Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
 - Notes: The first queue URL remains the next retry target. Resume when Search Console access is available in a permitted browser session.
+
+### Search Console daily indexing automation: 2026-06-22 22:28
+
+- Executor: Search Console automation AI
+- Property: `sc-domain:yuchienpsy.com`
+- Sitemap status: Not checked; browser security policy blocked navigation to Search Console before property/sitemap confirmation.
+- URL inspected: `https://yuchienpsy.com/articles/self-care-07.html`
+- URL Inspection result: Not completed; Chrome extension control was available, but browser security policy rejected navigation to `https://search.google.com`.
+- Live test result: Not run.
+- Action: Skipped; no Request indexing action was attempted.
+- Quota result: No quota consumed.
+- Queue update: Kept `quota-blocked`; appended blocked-run note for 2026-06-22 22:28.
+- Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
+- Notes: Stop condition reached before Search Console access. Retry this URL only when Search Console is available in the permitted Chrome session.

@@ -474,3 +474,19 @@
 - 只有品牌字成長，非品牌字沒有改善。
 - 單一裝置、國家或頁面出現異常差異。
 - Search Console 顯示的頁面與實際 canonical 不一致。
+
+---
+
+### Search Console daily indexing automation: 2026-06-22 22:14
+
+- Executor: Search Console automation AI
+- Property: `sc-domain:yuchienpsy.com`
+- Sitemap status: Not checked; Search Console browser access was blocked before property/sitemap confirmation.
+- URL inspected: `https://yuchienpsy.com/articles/self-care-07.html`
+- URL Inspection result: Not completed; browser security policy blocked navigation to `https://search.google.com`.
+- Live test result: Not run.
+- Action: Skipped; no Request indexing action was attempted.
+- Quota result: No new quota outcome; quota was not consumed because Search Console could not be opened.
+- Queue update: Kept `quota-blocked`; updated Last checked to 2026-06-22 with blocked-run note.
+- Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
+- Notes: The first queue URL remains the next retry target. Resume when Search Console access is available in a permitted browser session.

@@ -34,6 +34,10 @@ First target status:
 
 ## Power Automate Desktop flow
 
+Detailed setup checklist:
+
+- `power-automate-desktop-flow.md`
+
 1. Launch or focus Chrome.
 2. Confirm a Search Console tab is already open:
    - `https://search.google.com/search-console?resource_id=sc-domain:yuchienpsy.com`

@@ -539,3 +539,17 @@
 - The issue is no longer Chrome extension discovery. Chrome extension control can see and claim the Search Console tab.
 - The remaining blocker is browser policy preventing read/control of `https://search.google.com`.
 - Recommendation: pause the daily Codex automation until Search Console browser interaction is available, or switch to manual-assisted mode where the user performs Search Console UI steps and Codex records the outcome.
+
+### Search Console daily indexing automation: 2026-06-22 22:48
+
+- Executor: Search Console automation AI
+- Property: `sc-domain:yuchienpsy.com`
+- Sitemap status: Not checked; browser security policy blocked reading/interacting with the already-open Search Console tab before sitemap confirmation.
+- URL inspected: `https://yuchienpsy.com/articles/self-care-07.html`
+- URL Inspection result: Not completed; an already-open Search Console tab for `sc-domain:yuchienpsy.com` was claimable, but browser security policy rejected interaction with `https://search.google.com`.
+- Live test result: Not run.
+- Action: Skipped; no Request indexing action was attempted.
+- Quota result: No quota consumed.
+- Queue update: Kept `quota-blocked`; appended blocked-run note for 2026-06-22 22:48.
+- Next URL: `https://yuchienpsy.com/articles/self-care-07.html`
+- Notes: Browser access was available for open-tab listing and tab claiming only. This is another same-day blocked run after the 22:32 and 22:34 failures, so automated retries should remain paused until Search Console browser interaction is available, or the workflow should switch to manual-assisted mode.

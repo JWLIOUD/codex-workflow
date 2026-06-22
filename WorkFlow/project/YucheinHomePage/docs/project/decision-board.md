@@ -14,6 +14,7 @@
 
 - Search Console 索引與流量觀察仍需依 `search-performance.md` 追蹤。
 - 2026-06-22：每日 Search Console URL Inspection 自動化規格與 URL 佇列已建立；使用者已在 Codex Automations 建立每日 09:30 排程，ID：`yuchien-search-console-indexing-follow-up`。
+- 2026-06-22：索引工作改為三軌並行：短期 Windows RPA、中期 Search Console API 監控、長期網站內部連結與 sitemap 強化。
 
 ## 已完成
 

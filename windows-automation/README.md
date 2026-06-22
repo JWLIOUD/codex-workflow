@@ -53,3 +53,5 @@ Project-specific automation spec:
 
 - `WorkFlow/project/YucheinHomePage/docs/project/search-console-indexing-automation.md`
 - `WorkFlow/project/YucheinHomePage/docs/project/search-console-indexing-queue.md`
+- `windows-automation/search-console-rpa/README.md`
+- `windows-automation/search-console-api/README.md`
